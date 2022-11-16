@@ -11,12 +11,6 @@ import sunIcon from './icons/sun.png'
 
 class WeatherWeekly extends Component {
 
-    constructor(props) {
-        super(props);
-
-
-    }
-
     combineTemperatueAndTime(temperature_2m, time) {
         let combinedArr = []
 
@@ -26,7 +20,7 @@ class WeatherWeekly extends Component {
             let temp = Math.floor(temperature_2m[i]);
 
             let time_h = format(dateFormat, "H"); // Hours 0 -> 23
-            if (time_h == "0") time_h = "24" // turn 0 to 24 so we have 1 -> 24
+            if (time_h === "0") time_h = "24" // turn 0 to 24 so we have 1 -> 24
 
             let whatDayPhase = format(dateFormat, "p") // 12:00 AM or PM 
 
@@ -56,7 +50,7 @@ class WeatherWeekly extends Component {
         let tempIndex = 0;
 
         for (let i = 0; i < tempAndTime.length; i++) {
-            if (i != 0 && i % 24 == 0) {
+            if (i !== 0 && i % 24 === 0) {
                 tempAndTimeByDay.push([]);
                 tempIndex++;
 
@@ -94,7 +88,7 @@ class WeatherWeekly extends Component {
 
 
         for (let i = 0; i < weekdays.length; i++) {
-            if (startingIndex == weekdays.length) {
+            if (startingIndex === weekdays.length) {
                 startingIndex = 0;
             }
             weekDaysInOrder.push(weekdays[startingIndex])
@@ -139,14 +133,14 @@ class WeatherWeekly extends Component {
             middle = (LowsAndHighs[0][i] + LowsAndHighs[1][i]) / 2;
             oneStepInPercentage = (100 / step);
             diff = Math.abs(middle - LowsAndHighs[2][i]);
-            if (diff == 0) diff = 0.1;
+            if (diff === 0) diff = 0.1;
 
             // console.log("Middle: ", middle, "Mean:", LowsAndHighs[2][i], "diff: ", diff, "step:", step, "left", left, "oneSt", oneStepInPercentage, "wf", widthFree)
 
             WeeklyData.push(
                 <div key={uuidv4()} className="WeatherWeekly-SingleDay">
                     <p className='WeatherWeekly-Day'> {weekDaysInOrder[i].slice(0, 3)}. </p>
-                    <img src={this.getIcon((LowsAndHighs[0][i] + LowsAndHighs[1][i]) / 2)} />
+                    <img src={this.getIcon((LowsAndHighs[0][i] + LowsAndHighs[1][i]) / 2)} alt='weather-icon' />
                     <p className='WeatherWeekly-DayLow'> {LowsAndHighs[1][i]}° </p>
 
                     <div className='WeatherWeekly-Bar-Container'>
@@ -159,7 +153,7 @@ class WeatherWeekly extends Component {
             )
         }
 
-        console.log(WeeklyData)
+        // console.log(WeeklyData)
 
         return (
             <div className='WeatherWeekly' >

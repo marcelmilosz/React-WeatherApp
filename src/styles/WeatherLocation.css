@@ -1,0 +1,38 @@
+.WeatherLocation {
+    min-height: 200px;
+    max-height: 200px;
+
+    background-color: rgb(36, 80, 191);
+    background: linear-gradient(53deg, rgb(58, 109, 241) 0%, rgb(42, 89, 206) 100%);
+
+    box-shadow: 0px 1px 10px rgba(34, 66, 145, 0.4);
+
+    background-color: rgb(36, 80, 191);
+    background: linear-gradient(53deg, rgb(58, 109, 241) 0%, rgb(42, 89, 206) 100%);
+
+    box-shadow: 0px 1px 10px rgba(34, 66, 145, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    text-align: center;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    font-size: 22px;
+
+    gap: 0.8rem;
+    padding: 0.5rem;
+
+    padding: 2rem 2rem;
+
+    border-radius: 1rem;
+
+    color: #111;
+}

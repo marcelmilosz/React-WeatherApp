@@ -75,6 +75,24 @@
     animation: dotAnim 1500ms 80ms infinite ease-in-out;
 }
 
+.Weather-Double-Box {
+    max-width: 700px;
+    width: 80vw;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    gap: 1rem;
+}
+
+.Weather-Double-Box div {
+    width: 50%;
+    max-width: 50%;
+}
+
 .Weather-App-Logo {
 
     font-size: 6vw;
