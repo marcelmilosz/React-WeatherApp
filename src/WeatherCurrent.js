@@ -16,8 +16,6 @@ class WeatherCurrent extends Component {
                 <img src={currentTemperature[1]} alt='current temperature icon' />
                 <p className='WeatherCurrent-Text'> Current <br />temperature </p>
                 <p className='WeatherCurrent-Temperature'> {currentTemperature[0]}°</p>
-
-
             </div>
         );
     }

@@ -1,4 +1,4 @@
-.WeatherLocation {
+.WeatherPressure {
     min-height: 200px;
     max-height: 200px;
 
@@ -13,12 +13,10 @@
     box-shadow: 0px 1px 10px rgba(34, 66, 145, 0.4);
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     flex-wrap: nowrap;
-
-    text-align: center;
 
     overflow-x: scroll;
     -ms-overflow-style: none;
@@ -35,4 +33,28 @@
     border-radius: 1rem;
 
     color: #111;
+}
+
+.WeatherPressure-Text {
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    color: #FFF;
+}
+
+.WeatherPressure-Pressure {
+    font-size: 4rem;
+    font-weight: 800;
+    padding-top: 1rem;
+
+    color: #DDD;
+    text-shadow: 0px 0px 15px rgb(36, 80, 191);
+    line-height: 0.5;
+
+    text-align: center;
+    align-self: center;
+}
+
+.WeatherPressure-Pressure span {
+    font-size: 2rem;
 }

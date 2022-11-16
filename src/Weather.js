@@ -7,7 +7,7 @@ import './styles/Weather.css'
 import WeatherTemperature from './WeatherTemperature'
 import WeatherWeekly from './WeatherWeekly';
 import WeatherCurrent from './WeatherCurrent';
-import WeatherLocation from './WeatherLocation';
+import WeatherPressure from './WeatherPressure';
 
 import rainIcon from './icons/rain.png'
 import snowIcon from './icons/snow.png'
@@ -86,7 +86,8 @@ class Weather extends Component {
 
 
             // Get temperature of this city:
-            const query = `https://api.open-meteo.com/v1/forecast?latitude=${latLongResponse.latitude}&longitude=${latLongResponse.longitude}&hourly=temperature_2m`;
+            const query = `https://api.open-meteo.com/v1/forecast?latitude=${latLongResponse.latitude}&longitude=${latLongResponse.longitude}&hourly=temperature_2m,pressure_msl,surface_pressure`;
+
             const weatherResponse = await axios.get(query);
             const weatherData = weatherResponse.data;
 
@@ -135,15 +136,26 @@ class Weather extends Component {
         currentTemperature.push(Math.floor(data.hourly.temperature_2m[i]));
         currentTemperature.push(this.getIcon(currentTemperature[0]));
 
-        console.log(currentTemperature)
+        // console.log(currentTemperature)
 
         return currentTemperature
+    }
+
+    // We calculate Pressure by adding 24 points together and getting the mean value
+    getCurrentPressure(data) {
+        let tmpSum = 0;
+        for (let i = 0; i < 24; i++) {
+            tmpSum += data[i]
+        }
+
+        return (tmpSum / 24)
     }
 
     render() {
 
         const { search, weatherData, isSearchClicked, isSearching } = this.state;
         let currentTemperaute = 0;
+        let currentPressure = 0;
 
         // Today date to pass to child components
         const currentDay = new Date();
@@ -155,7 +167,8 @@ class Weather extends Component {
         currentDayObj.hour = currentDay.getHours(); // Current HOUR 
 
         if (Object.keys(weatherData).length > 0) {
-            currentTemperaute = this.getCurrentTemperature(weatherData, currentDayObj)
+            currentTemperaute = this.getCurrentTemperature(weatherData, currentDayObj);
+            currentPressure = this.getCurrentPressure(weatherData.hourly.pressure_msl);
         }
 
 
@@ -191,7 +204,7 @@ class Weather extends Component {
                     (Object.keys(weatherData).length !== 0) ?
                         <div className='Weather-Double-Box'>
                             <WeatherCurrent key={uuidv4()} currentTemperature={currentTemperaute} />
-                            <WeatherLocation key={uuidv4()} temperatureData={weatherData.hourly} todayDate={currentDayObj} />
+                            <WeatherPressure key={uuidv4()} currentPressure={currentPressure} />
                         </div>
                         : ""
                 }
