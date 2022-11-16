@@ -1,0 +1,72 @@
+.WeatherTemperature {
+    max-width: 700px;
+    width: 80vw;
+
+    min-height: 180px;
+
+    background-color: rgb(36, 80, 191);
+    background: linear-gradient(53deg, rgb(58, 109, 241) 0%, rgb(42, 89, 206) 100%);
+
+    box-shadow: 0px 1px 10px rgba(34, 66, 145, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    text-align: center;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    font-size: 22px;
+
+    gap: 1rem;
+
+    padding: 1rem 2.5rem;
+
+    border-radius: 1rem;
+
+    color: #111;
+}
+
+.WeatherTemperature::-webkit-scrollbar {
+    display: none;
+}
+
+.single-temperature-container,
+.current-hour-container {
+    border-radius: 8px;
+}
+
+.current-hour-container {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+}
+
+.temperature-icon {
+    max-width: 40px;
+}
+
+.time-h {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* For hours to identifi day vs night*/
+.hours-day,
+.hours-night {
+    font-size: 18px;
+}
+
+.hours-day {
+    color: rgb(187, 206, 255);
+}
+
+.hours-night {
+    color: rgb(40, 26, 143);
+}
