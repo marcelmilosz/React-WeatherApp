@@ -188,7 +188,10 @@ class Weather extends Component {
 
                 <button className="Weather-Search-Button" onClick={this.handleSubmit}> Search </button>
 
-                <p className="Weather-Search-City"> {search} </p>
+                <div class="Weather-Search-Box">
+                    <p className="Weather-Search-City"> Location: {search} </p>
+                </div>
+
 
                 {// Loading Animation
                     (isSearching) ?
