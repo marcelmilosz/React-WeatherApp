@@ -141,6 +141,7 @@ class WeatherWeekly extends Component {
                 <div key={uuidv4()} className="WeatherWeekly-SingleDay">
                     <p className='WeatherWeekly-Day'> {weekDaysInOrder[i].slice(0, 3)}. </p>
                     <img src={this.getIcon((LowsAndHighs[0][i] + LowsAndHighs[1][i]) / 2)} alt='weather-icon' />
+
                     <p className='WeatherWeekly-DayLow'> {LowsAndHighs[1][i]}° </p>
 
                     <div className='WeatherWeekly-Bar-Container'>
@@ -148,6 +149,7 @@ class WeatherWeekly extends Component {
                     </div>
 
                     <p className='WeatherWeekly-DayHigh'> {LowsAndHighs[0][i]}° </p>
+
                 </div>
 
             )

@@ -175,22 +175,32 @@ class Weather extends Component {
         return (
             <div className='Weather'>
                 <h1 className='Weather-App-Logo'> Weather App </h1>
-                <input id="searchInput" className='Weather-Search-Input' type="text" onChange={this.handleInput} />
+                <div class="Weather-Input-Container"><label className="Weather-Input-Label" for="searchInput"> Enter location: </label>
+                    <div>
+                        <input id="searchInput" className='Weather-Search-Input' type="text" onChange={this.handleInput} />
+                        <button className="Weather-Search-Button" onClick={this.handleSubmit}> Search </button>
+                    </div>
+                </div>
+
 
 
                 { // If something wrong in search we return error message
                     (isSearchClicked === true && Object.keys(weatherData).length === 0) ?
-                        <p className="Weather-Search-Error"> I Couldn't find any data for city: {search} <br />
+                        <p className="Weather-Search-Error"> I Couldn't find any data for city: {search} <br /><br />
                             Make sure you haven't searched by country name or made any typing mistakes
                         </p>
                         : ""
                 }
 
-                <button className="Weather-Search-Button" onClick={this.handleSubmit}> Search </button>
 
-                <div class="Weather-Search-Box">
-                    <p className="Weather-Search-City"> Location: {search} </p>
-                </div>
+                { // Here we are showing searching location
+                    (Object.keys(weatherData).length !== 0) ?
+                        <div class="Weather-Search-Box">
+                            <p className="Weather-Search-City"> Location: {search} </p>
+                        </div>
+                        : ""
+                }
+
 
 
                 {// Loading Animation

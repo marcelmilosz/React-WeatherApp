@@ -62,3 +62,9 @@
     opacity: 0.8;
     z-index: 2;
 }
+
+@media (max-width: 649px) {
+    .WeatherCurrent-Text {
+        font-size: 1.2rem;
+    }
+}

@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap');
-
 .Weather {
-    font-family: inherit;
+    font-family: "Inter";
 
     display: flex;
     flex-direction: column;
@@ -10,6 +8,7 @@
     gap: 1rem;
 
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -90,39 +89,65 @@
 
 .Weather-Double-Box div {
     width: 50%;
-    max-width: 50%;
 }
 
 .Weather-App-Logo {
 
-    font-size: 6vw;
-    font-family: Poppins;
+    font-size: calc(5vw + 24px);
+    font-family: "Inter";
     font-weight: 800;
 
     white-space: nowrap;
 
     color: rgb(234, 233, 255);
-    text-transform: uppercase;
-    background: linear-gradient(to right, #dde9ff 0%, #98c2eb 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 
     margin: 1rem;
     text-align: center;
 }
 
+.Weather-Input-Container {
+    max-width: 700px;
+    width: 80vw;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    gap: 1rem;
+
+}
+
+.Weather-Input-Container>div {
+    max-width: 700px;
+    width: 80vw;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.Weather-Input-Label {
+    font-size: 16px;
+    text-align: left;
+
+    color: #FFF;
+}
+
 .Weather-Search-Input {
-
-    min-width: calc(45vw - 25%);
-
     height: 50px;
+    max-height: 50px;
 
     border: 0;
-    border-radius: 50px;
+    border-radius: 12px;
 
     padding: 1rem 2rem;
     font-size: 1.5em;
-    font-family: Poppins;
+    font-family: 'Inter';
     font-weight: 400;
 
     color: #FFF;
@@ -130,11 +155,11 @@
     background-color: rgba(221, 233, 255, 0.4);
     transition: all 300ms;
 
-    text-align: center;
+    text-align: left;
 
     outline: none;
 
-    margin-bottom: 1rem;
+    flex: 1;
 }
 
 .Weather-Search-Input:hover,
@@ -146,14 +171,14 @@
     cursor: pointer;
 
     min-width: 150px;
-    height: 40px;
+    height: 50px;
 
     font-size: 1.2em;
-    font-family: Poppins;
+    font-family: 'Inter';
     font-weight: 400;
 
     border: 0;
-    border-radius: 50px;
+    border-radius: 12px;
 
     color: #FFF;
     box-shadow: 0px 0px 12px rgba(70, 119, 243, 0.5);
@@ -169,7 +194,7 @@
 
 .Weather-Search-City {
     font-size: 22px;
-    font-family: Poppins;
+    font-family: 'Inter';
     font-weight: 800;
     text-transform: uppercase;
 
@@ -203,20 +228,21 @@
 
     border-radius: 1rem;
 
+    margin-top: 1rem;
+
     color: #111;
 }
 
 .Weather-Search-Error {
-    min-width: 20vw;
-    max-width: 30vw;
-    min-height: 10vh;
+    max-width: 700px;
+    width: 80vw;
 
-    background-color: rgba(160, 21, 30, 0.4);
-    color: rgb(253, 27, 27);
-    padding: 1rem 1.5rem;
+    background-color: #ff848cd6;
+    color: #3a1c1f;
+    padding: 1.5rem;
     font-size: 18px;
-    font-weight: 500;
-    margin-top: 0.3rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
 
     line-height: 1.2;
@@ -224,4 +250,15 @@
     border-radius: 8px;
 
     transition: all 300ms;
+}
+
+@media (max-width: 1200px) {
+    .Weather-Input-Container>div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Weather-Search-Input {
+        width: 100%;
+    }
 }

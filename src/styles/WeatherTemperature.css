@@ -55,6 +55,7 @@
 .time-h {
     font-size: 22px;
     font-weight: 600;
+    padding-bottom: 4px;
 }
 
 /* For hours to identifi day vs night*/

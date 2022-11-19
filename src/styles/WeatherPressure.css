@@ -15,17 +15,14 @@
 
     font-family: "Inter";
 
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-
     font-size: 22px;
 
     gap: 0.8rem;
     padding: 0.5rem;
 
     padding: 2rem 2rem;
+
+    overflow-x: hidden;
 
     border-radius: 1rem;
 
@@ -54,4 +51,15 @@
 
 .WeatherPressure-Pressure span {
     font-size: 2rem;
+}
+
+@media (max-width: 649px) {
+    .WeatherPressure-Text {
+        font-size: 1.2rem;
+    }
+
+    .WeatherPressure-Pressure {
+        font-size: 3rem;
+        line-height: 0.6;
+    }
 }
