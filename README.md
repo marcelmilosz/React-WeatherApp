@@ -8,5 +8,6 @@ Link: https://open-meteo.com/en 🔥
 
 ## How it looks:
 ![Weather-App-Screen](https://user-images.githubusercontent.com/61027817/202840461-ec190ebd-6126-4bc8-a1ea-09518697c5c3.png)
+#### yes, visually I was aiming for a similar look to the default weather app on IOS
 
 Cooool 😎
