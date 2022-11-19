@@ -70,7 +70,7 @@ class Weather extends Component {
     // Getting latLong info and temperature data from this location
     async gatherData(location) {
 
-        console.log("Getting data for: ", location);
+        // console.log("Getting data for: ", location);
 
         try {
             const config = {
@@ -173,9 +173,9 @@ class Weather extends Component {
 
 
         return (
-            <div className='Weather'>
+            <div className={(Object.keys(weatherData).length === 0) ? 'Weather-Centered-Default' : 'Weather'}>
                 <h1 className='Weather-App-Logo'> Weather App </h1>
-                <div class="Weather-Input-Container"><label className="Weather-Input-Label" for="searchInput"> Enter location: </label>
+                <div className="Weather-Input-Container"><label className="Weather-Input-Label" htmlFor="searchInput"> Enter location: </label>
                     <div>
                         <input id="searchInput" className='Weather-Search-Input' type="text" onChange={this.handleInput} />
                         <button className="Weather-Search-Button" onClick={this.handleSubmit}> Search </button>
@@ -195,7 +195,7 @@ class Weather extends Component {
 
                 { // Here we are showing searching location
                     (Object.keys(weatherData).length !== 0) ?
-                        <div class="Weather-Search-Box">
+                        <div className="Weather-Search-Box">
                             <p className="Weather-Search-City"> Location: {search} </p>
                         </div>
                         : ""
@@ -206,10 +206,10 @@ class Weather extends Component {
                 {// Loading Animation
                     (isSearching) ?
                         <div className="Weather-Loading-Container">
-                            <div className='dot dot1'></div>
-                            <div className='dot dot2'></div>
-                            <div className='dot dot3'></div>
-                            <div className='dot dot4'></div>
+                            <div className='dot dot1'> <img src={snowIcon} alt="Animation icon" /> </div>
+                            <div className='dot dot2'> <img src={rainIcon} alt="Animation icon" /> </div>
+                            <div className='dot dot3'> <img src={sunCloudsIcon} alt="Animation icon" /> </div>
+                            <div className='dot dot4'> <img src={sunIcon} alt="Animation icon" /></div>
                         </div> : ""
                 }
 

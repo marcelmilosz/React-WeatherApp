@@ -11,6 +11,14 @@
     margin-bottom: 2rem;
 }
 
+.Weather-Centered-Default {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    gap: 1rem;
+}
+
 
 /* Loading animation */
 .Weather-Loading-Container {
@@ -50,12 +58,12 @@
 }
 
 .Weather-Loading-Container .dot {
-    width: 4vh;
-    height: 4vh;
+    width: 6vh;
+    height: 6vh;
+}
 
-    border-radius: 50px;
-
-    background-color: #FFF;
+.Weather-Loading-Container .dot img {
+    max-width: 6vh;
 }
 
 .dot1 {
